@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Forms from "../components/Forms";
 
 const Cadastro = () => {
   return (
-    <div>Cadastro</div>
-  )
-}
+    <div>
+      <Forms />
+    </div>
+  );
+};
 
-export default Cadastro
+export default Cadastro;

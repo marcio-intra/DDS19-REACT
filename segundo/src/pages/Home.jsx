@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+
+import { Navigate } from "react-router-dom";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  const isAuth = true;
 
-export default Home
+  return (
+    <div>
+      {
+      isAuth 
+      ? <Navigate to="/" /> 
+      : <Navigate to="/login" />
+      }
+      Home
+    </div>
+  );
+};
+
+export default Home;
