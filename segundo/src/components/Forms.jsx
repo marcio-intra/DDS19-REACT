@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import styles from "./Forms.module.css";
 
-const Forms = () => {
-  const [nome, setNome] = useState();
-  const [email, setEmail] = useState();
-  const [senha, setSenha] = useState();
+const Forms = (props) => {
+  const [nome, setNome]   = useState(props ? props.nome : "");
+  const [email, setEmail] = useState(props ? props.email : "");
+  const [senha, setSenha] = useState(props ? props.senha : "");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,13 +15,13 @@ const Forms = () => {
   };
 
   const handleName = (e) => {
-    console.log(e.target.value);
+    //console.log(e.target.value);
     setNome(e.target.value);
   };
 
   return (
     <div>
-      <h4>Forms</h4>
+      <h4>Cadarastro</h4>
       <form className={styles.formulario} onSubmit={handleSubmit}>
         {/* Label fora do input, com htmlFor */}
         <label htmlFor="nome">Nome: </label>
@@ -30,8 +30,8 @@ const Forms = () => {
           id="nome"
           placeholder="Digite seu nome..."
           onChange={handleName}
+          value={nome}
         />
-
         {/* Label envolvendo o input */}
         <label>
           <span>Email:</span>
@@ -39,12 +39,14 @@ const Forms = () => {
             type="email"
             name="email"
             placeholder="Digite seu email..."
-            onChange={(e) => {
+            onChange={
+              (e) => {
               setEmail(e.target.value);
-            }}
+            }
+          }
+          value={email}
           />
         </label>
-
         <label>
           <span>Senha:</span>
           <input
@@ -54,6 +56,7 @@ const Forms = () => {
             onChange={(e) => {
                 setSenha(e.target.value);
               }}
+              value={senha}
           />
         </label>
         <input
