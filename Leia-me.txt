@@ -20,3 +20,4 @@ bash
 git add .
 git commit -m "Resolvendo conflitos"
 git push origin main
+git pull
