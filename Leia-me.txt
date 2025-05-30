@@ -1,0 +1,22 @@
+✅ 1. Adicionar e salvar as alterações
+
+git add .
+git commit -m "Descrição das mudanças"
+Isso prepara e registra suas alterações no Git.
+
+🔄 2. Atualizar com mudanças remotas antes de enviar
+
+git pull origin main --rebase
+Isso garante que você pega as últimas atualizações do repositório antes de enviar suas próprias mudanças. O --rebase ajuda a evitar conflitos.
+
+🚀 3. Enviar suas alterações para o repositório
+
+git push origin main
+Isso envia suas alterações para a branch main no GitHub.
+
+Caso aconteça algum conflito durante o git pull, você pode resolvê-los manualmente nos arquivos afetados e depois rodar:
+
+bash
+git add .
+git commit -m "Resolvendo conflitos"
+git push origin main
