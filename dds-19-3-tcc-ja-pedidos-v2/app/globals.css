@@ -1,0 +1,270 @@
+/* Roboto font is loaded via Next.js font optimization in layout.jsx */
+
+:root {
+  --azul-principal: #2028ad;
+  --laranja-principal: #fb5909;
+  --azul-escuro: #101f62;
+  --roxo: #8750ff;
+  --verde: #28a745;
+  --branco: #ffffff;
+  --preto: #000000;
+  --cinza-claro: #f5f5f5;
+  --cinza-medio: #e0e0e0;
+  --cinza-escuro: #666666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--cinza-claro);
+  color: var(--preto);
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Responsividade mínima para smartphones */
+@media (max-width: 768px) {
+  body {
+    min-width: 540px;
+    overflow-x: auto;
+  }
+
+  .app-container {
+    min-width: 540px;
+  }
+}
+
+/* Estilos globais para botões */
+button {
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos globais para inputs */
+input,
+select,
+textarea {
+  font-family: "Roboto", sans-serif;
+  border: 1px solid var(--cinza-medio);
+  border-radius: 4px;
+  padding: 8px 12px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--azul-principal);
+  box-shadow: 0 0 0 2px rgba(32, 40, 173, 0.1);
+}
+
+/* Estilos globais para links */
+a {
+  color: var(--azul-principal);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--laranja-principal);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cinza-claro);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cinza-medio);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--azul-principal);
+}
+
+/* Utilitários básicos para substituir algumas classes do Tailwind */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: 8px;
+}
+
+.gap-4 {
+  gap: 16px;
+}
+
+.p-4 {
+  padding: 16px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.bg-white {
+  background-color: var(--branco);
+}
+
+.text-white {
+  color: var(--branco);
+}
+
+.rounded {
+  border-radius: 4px;
+}
+
+.shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.border {
+  border: 1px solid var(--cinza-medio);
+}
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.select-none {
+  user-select: none;
+}
+
+.transition {
+  transition: all 0.3s ease;
+}
+
+.hover\:bg-gray-100:hover {
+  background-color: var(--cinza-claro);
+}
+
+.hover\:text-blue-600:hover {
+  color: var(--azul-principal);
+}
+
+.focus\:outline-none:focus {
+  outline: none;
+}
+
+.focus\:ring-2:focus {
+  box-shadow: 0 0 0 2px rgba(32, 40, 173, 0.1);
+}

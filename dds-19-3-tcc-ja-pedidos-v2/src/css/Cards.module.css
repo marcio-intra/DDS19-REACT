@@ -1,0 +1,209 @@
+.card {
+  background-color: var(--branco);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+  max-width: 100%;
+  cursor: pointer;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card.expanded {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.card.aguardando {
+  border-left-color: var(--laranja-principal);
+}
+
+.card.andamento {
+  border-left-color: var(--azul-principal);
+}
+
+.card.concluido {
+  border-left-color: #28a745;
+}
+
+.card.cancelado {
+  border-left-color: #dc3545;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.statusBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.card.aguardando .statusBadge {
+  background-color: rgba(251, 89, 9, 0.1);
+  color: var(--laranja-principal);
+}
+
+.card.andamento .statusBadge {
+  background-color: rgba(32, 40, 173, 0.1);
+  color: var(--azul-principal);
+}
+
+.card.concluido .statusBadge {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+}
+
+.card.cancelado .statusBadge {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+.statusIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.viewButton {
+  background: none;
+  border: none;
+  color: var(--azul-principal);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewButton:hover {
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  transform: scale(1.1);
+}
+
+.cardContent {
+  margin-bottom: 12px;
+}
+
+.clienteName {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--azul-escuro);
+  margin-bottom: 6px;
+}
+
+.protocolo {
+  font-size: 12px;
+  color: var(--cinza-escuro);
+  margin-bottom: 4px;
+}
+
+.valor {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--azul-principal);
+  margin-bottom: 4px;
+}
+
+.data {
+  font-size: 12px;
+  color: var(--cinza-escuro);
+}
+
+.expandedContent {
+  border-top: 1px solid var(--cinza-claro);
+  padding-top: 12px;
+  margin-top: 12px;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 300px;
+  }
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.detail strong {
+  font-size: 12px;
+  color: var(--azul-escuro);
+  font-weight: 600;
+}
+
+.detail span {
+  font-size: 12px;
+  color: var(--cinza-escuro);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.actionButton {
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+  background-color: var(--laranja-principal);
+  transform: translateY(-1px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actionButton {
+    width: 100%;
+  }
+}

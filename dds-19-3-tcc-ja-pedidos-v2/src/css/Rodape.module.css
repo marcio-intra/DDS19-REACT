@@ -1,0 +1,265 @@
+.footer {
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  height: 300px;
+  margin-top: auto;
+  overflow: hidden; /* Remove a barra de rolagem */
+  margin-left: 75px; /* Espaço para o navbar retraído */
+  transition: margin-left 0.3s ease;
+}
+
+.footer.expanded {
+  margin-left: 175px; /* Espaço para o navbar expandido */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px 15px 20px; /* Reduzido o padding */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribui o espaço uniformemente */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px; /* Reduzido o gap */
+  align-items: start;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Reduzido o gap */
+  margin-bottom: 15px; /* Reduzido a margem */
+}
+
+.logoIcon {
+  width: 28px; /* Reduzido o tamanho */
+  height: 28px;
+  color: var(--laranja-principal);
+}
+
+.logoText {
+  font-size: 18px; /* Reduzido o tamanho */
+  font-weight: 700;
+  color: var(--branco);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 10px; /* Reduzido o gap */
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; /* Reduzido o tamanho */
+  height: 32px;
+  background-color: transparent; /* Removido o fundo sólido */
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7); /* Cor inicial mais suave */
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.socialLink::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--laranja-principal);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.socialLink:hover::before {
+  transform: scale(1);
+}
+
+.socialLink:hover {
+  color: var(--branco);
+  transform: translateY(-3px) scale(1.15); /* Movimento para cima e aumento */
+}
+
+.socialLink svg {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.columnTitle {
+  font-size: 14px; /* Reduzido o tamanho */
+  font-weight: 600;
+  color: var(--branco);
+  margin-bottom: 12px; /* Reduzido a margem */
+  padding-bottom: 6px; /* Reduzido o padding */
+  border-bottom: 2px solid var(--azul-principal);
+}
+
+.linksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linksList li {
+  margin-bottom: 6px; /* Reduzido a margem */
+}
+
+.link {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px; /* Reduzido o tamanho */
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: var(--laranja-principal);
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Reduzido o gap */
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reduzido o gap */
+  font-size: 13px; /* Reduzido o tamanho */
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contactIcon {
+  width: 14px; /* Reduzido o tamanho */
+  height: 14px;
+  color: var(--laranja-principal);
+}
+
+.separator {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 15px 0 10px 0; /* Reduzido as margens */
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px; /* Reduzido o gap */
+}
+
+.copyright {
+  font-size: 11px; /* Reduzido o tamanho */
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 15px; /* Reduzido o gap */
+}
+
+.bottomLink {
+  font-size: 11px; /* Reduzido o tamanho */
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease;
+}
+
+.bottomLink:hover {
+  color: var(--laranja-principal);
+}
+
+.systemStatus {
+  padding-top: 8px; /* Reduzido o padding */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Reduzido o gap */
+  font-size: 11px; /* Reduzido o tamanho */
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.statusDot {
+  width: 6px; /* Reduzido o tamanho */
+  height: 6px;
+  background-color: #28a745;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(40, 167, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer {
+    min-width: 540px;
+    overflow-x: auto;
+    margin-left: 75px; /* Mantém o espaço do navbar em mobile */
+  }
+
+  .footer.expanded {
+    margin-left: 160px; /* Espaço para navbar expandido em mobile */
+  }
+
+  .container {
+    padding: 15px; /* Reduzido ainda mais em mobile */
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 15px; /* Reduzido o gap em mobile */
+  }
+
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px; /* Reduzido o gap */
+  }
+
+  .bottomLinks {
+    justify-content: center;
+    gap: 12px; /* Reduzido o gap */
+  }
+
+  .socialLink:hover {
+    transform: translateY(-2px) scale(1.1); /* Efeito reduzido em mobile */
+  }
+}
+
+@media (max-width: 540px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom {
+    flex-direction: column;
+  }
+}

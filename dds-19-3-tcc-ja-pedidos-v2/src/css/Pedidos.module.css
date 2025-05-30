@@ -1,0 +1,322 @@
+.pedidosContainer {
+  width: 100%;
+  min-width: 540px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form {
+  background-color: var(--branco);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--cinza-claro);
+}
+
+.section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--azul-escuro);
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--azul-principal);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.inputRow {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.label {
+  font-weight: 500;
+  color: var(--azul-escuro);
+  font-size: 13px;
+}
+
+.input,
+.select,
+.textarea {
+  padding: 8px 12px;
+  border: 1px solid var(--cinza-medio);
+  border-radius: 4px;
+  font-size: 13px;
+  transition: border-color 0.3s ease;
+  width: 100%; /* Garante que os inputs ocupem toda a largura disponível */
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--azul-principal);
+  outline: none;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.radioGroup label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--azul-escuro);
+  cursor: pointer;
+}
+
+.checkboxGroup {
+  margin-bottom: 12px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--azul-escuro);
+  cursor: pointer;
+}
+
+.addressGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.pedidoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.quantityGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative; /* Adicionado position relative */
+  width: 100%; /* Garante que o grupo ocupe toda a largura disponível */
+}
+
+.addButton {
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px; /* Largura mínima fixa */
+  height: 28px; /* Altura fixa */
+  flex-shrink: 0; /* Impede que o botão encolha */
+  z-index: 2; /* Garante que o botão fique acima de outros elementos */
+}
+
+.addButton:hover {
+  background-color: var(--laranja-principal);
+}
+
+.tableContainer {
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--branco);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th {
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  padding: 10px 8px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.table td {
+  padding: 8px;
+  border-bottom: 1px solid var(--cinza-claro);
+  font-size: 12px;
+}
+
+.table tr:hover {
+  background-color: var(--cinza-claro);
+}
+
+.selectSmall {
+  padding: 4px 6px;
+  border: 1px solid var(--cinza-medio);
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.addItemButton {
+  background-color: var(--verde);
+  color: var(--branco);
+  padding: 4px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+}
+
+.addItemButton:hover {
+  background-color: #218838;
+}
+
+.removeButton {
+  background-color: #dc3545;
+  color: var(--branco);
+  padding: 4px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+}
+
+.removeButton:hover {
+  background-color: #c82333;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.saveButton,
+.editButton,
+.saveAsButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.saveButton {
+  background-color: var(--azul-principal);
+  color: var(--branco);
+}
+
+.saveButton:hover {
+  background-color: var(--laranja-principal);
+}
+
+.editButton {
+  background-color: var(--roxo);
+  color: var(--branco);
+}
+
+.editButton:hover {
+  background-color: #7041d9;
+}
+
+.saveAsButton {
+  background-color: var(--cinza-escuro);
+  color: var(--branco);
+}
+
+.saveAsButton:hover {
+  background-color: #555555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .pedidosContainer {
+    min-width: 540px;
+    overflow-x: auto;
+  }
+
+  .form {
+    padding: 15px;
+  }
+
+  .inputRow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .addressGrid,
+  .pedidoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .saveButton,
+  .editButton,
+  .saveAsButton {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    gap: 2px;
+  }
+}

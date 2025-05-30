@@ -1,0 +1,127 @@
+.errorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 20px;
+}
+
+.errorContent {
+  text-align: center;
+  background-color: var(--branco);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.errorIcon {
+  width: 64px;
+  height: 64px;
+  color: var(--laranja-principal);
+  margin-bottom: 20px;
+}
+
+.errorTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  margin-bottom: 15px;
+}
+
+.errorMessage {
+  font-size: 16px;
+  color: var(--cinza-escuro);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.errorActions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.homeButton,
+.refreshButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.homeButton {
+  background-color: var(--azul-principal);
+  color: var(--branco);
+}
+
+.homeButton:hover {
+  background-color: var(--laranja-principal);
+}
+
+.refreshButton {
+  background-color: var(--cinza-escuro);
+  color: var(--branco);
+}
+
+.refreshButton:hover {
+  background-color: #555555;
+}
+
+.errorDetails {
+  text-align: left;
+  background-color: var(--cinza-claro);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--azul-principal);
+}
+
+.errorDetails h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--azul-escuro);
+  margin-bottom: 15px;
+}
+
+.errorDetails ul {
+  list-style: none;
+  padding: 0;
+}
+
+.errorDetails li {
+  font-size: 14px;
+  color: var(--cinza-escuro);
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.errorDetails li::before {
+  content: "•";
+  color: var(--azul-principal);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .errorActions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homeButton,
+  .refreshButton {
+    width: 100%;
+    max-width: 250px;
+  }
+}

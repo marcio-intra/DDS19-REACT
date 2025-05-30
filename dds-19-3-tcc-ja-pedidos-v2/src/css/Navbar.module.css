@@ -1,0 +1,209 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  transition: width 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.retracted {
+  width: 75px;
+}
+
+.expanded {
+  width: 175px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+  justify-content: center;
+}
+
+.logo:hover {
+  background-color: var(--azul-principal);
+}
+
+.logoIcon {
+  width: 28px;
+  height: 28px;
+  color: var(--laranja-principal);
+}
+
+.logoText {
+  margin-left: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.searchContainer {
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.searchInputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 30px 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--branco);
+  font-size: 12px;
+  flex: 1;
+}
+
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--azul-principal);
+  box-shadow: 0 0 0 2px rgba(32, 40, 173, 0.3);
+}
+
+.searchButton {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.searchButton:hover {
+  color: var(--laranja-principal);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  position: relative;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 15px;
+  background: none;
+  border: none;
+  color: var(--branco);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.retracted .menuButton {
+  justify-content: center;
+  padding: 12px 10px;
+}
+
+.expanded .menuButton {
+  justify-content: flex-start;
+}
+
+.menuButton:hover {
+  background-color: var(--azul-principal);
+  transform: translateX(3px);
+}
+
+.menuButton.active {
+  background-color: var(--laranja-principal);
+}
+
+.menuIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.menuText {
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.chevron {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.submenuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submenuItem {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.submenuButton {
+  display: block;
+  width: 100%;
+  padding: 10px 15px 10px 45px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  font-size: 12px;
+}
+
+.submenuButton:hover {
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  padding-left: 50px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    z-index: 1001;
+  }
+
+  .retracted {
+    width: 75px;
+  }
+
+  .expanded {
+    width: 160px;
+  }
+}
